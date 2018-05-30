@@ -1,0 +1,49 @@
+<web-app>
+    <servlet>
+        <servlet-name>Signin</servlet-name>
+        <servlet-class>Signin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Signin</servlet-name>
+        <url-pattern>/Signin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Signup</servlet-name>
+        <servlet-class>Signup</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Signup</servlet-name>
+        <url-pattern>/Signup</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Request</servlet-name>
+        <servlet-class>Request</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Request</servlet-name>
+        <url-pattern>/Request</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Messages</servlet-name>
+        <servlet-class>Messages</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Messages</servlet-name>
+        <url-pattern>/Messages</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Reject</servlet-name>
+        <servlet-class>Reject</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Reject</servlet-name>
+        <url-pattern>/Reject</url-pattern>
+    </servlet-mapping>
+</web-app>
