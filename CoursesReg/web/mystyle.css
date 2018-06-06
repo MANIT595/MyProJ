@@ -1,0 +1,61 @@
+/*for Number Increase And Decrease Disable*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* for navigation Bar */
+body {
+  background-image: url("hello.jpg");
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/* normal */
+table{
+    margin-bottom: 15px;
+}
+td
+{
+color: #80DEEA;
+    font-size: 22px;
+}
+
+P
+{
+    color: #F50057;
+    font-size: 22px;
+}
