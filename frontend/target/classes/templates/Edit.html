@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h3 align="center">Edit User Details</h3>
+
+<div>
+
+    <form action="#" th:action="@{/edite/{id}(id=${usere.id})}" method="post" th:object="${usere}">
+        <label for="name">Name</label>
+        <input type="text" id="name" th:value="${usere.name}" name="name" placeholder="Your name..">
+
+        <label for="name">email</label>
+        <input type="text" id="email" th:value="${usere.email}" name="email" placeholder="Your email..">
+        <label for="name">Password</label>
+        <input type="text" id="password" name="password" placeholder="Your password.." required>
+
+        <label for="rollno">Roll No</label>
+        <input type="text" id="rollno" th:value="${usere.rollno}" name="rollno" placeholder="Your Roll no..">
+
+        <label for="class">Class</label>
+        <input type="text" id="class" th:value="${usere.clas}" name="clas" placeholder="Your class no..">
+
+        <label for="rollno">Address</label>
+        <input type="text" id="address" th:value="${usere.address}" name="address" placeholder="Your address..">
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+</body>
+</html>

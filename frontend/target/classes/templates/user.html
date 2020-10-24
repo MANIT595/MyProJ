@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <style>
+        body
+        {
+            background:#c8c8c9;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<h3 align="center">Welcome User</h3>
+<table>
+    <tr>
+        <th>Email </th>
+        <th>Name</th>
+        <th>class</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="user:${listusers}">
+        <td contenteditable="true" th:text="${user.email}">Email</td>
+        <td th:text="${user.name}">name</td>
+        <td th:text="${user.clas}">Class</td>
+        <td th:text="${user.address}">Address</td>
+        <td>
+            <a th:href="@{/edit/{id}(id=${user.id})}">
+                Edit
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/delete/{id}(id=${user.id})}">
+                Delete
+            </a>
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>
