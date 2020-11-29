@@ -4,37 +4,57 @@ package com.crudop.crudop;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "datain" )
+@Table(name = "registertab")
 public class UserModel {
-
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    Integer id;
-    @Column(name = "username")
-    String username;
-    @Column(name = "password")
-    String password;
-    @Column(name = "email")
-    String email;
 
-    public Integer getId() {
+
+    @Column(name = "id")
+    private int id;
+    @Column
+    private int rollno;
+    @Column
+    private String name;
+    @Column
+    private String email;
+    @Column
+    private String password;
+    @Column
+    private String address;
+    @Column
+    private int Clas;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public int getRollno() {
+        return rollno;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -45,11 +65,19 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getClas() {
+        return Clas;
+    }
+
+    public void setClas(int clas) {
+        Clas = clas;
     }
 }

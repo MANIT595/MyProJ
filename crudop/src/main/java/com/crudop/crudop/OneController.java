@@ -11,9 +11,11 @@ import java.util.List;
 @RestController
 public class OneController {
 
+
     @Autowired
     FetchDataService fetchDataService;
 
+    @CrossOrigin("http://localhost:4200/users")
     @GetMapping("users")
     public List<UserModel> userModel()
     {
@@ -27,10 +29,11 @@ public class OneController {
         return fetchDataService.findById(id).get();
     }
 
-    @PutMapping("add")
-    public void userAdd(@RequestBody UserModel user)
+    @PostMapping("add")
+    public String  userAdd(@RequestBody UserModel user)
     {
         fetchDataService.save(user);
+        return "Successfully Registered";
     }
 
     @PutMapping("update")
@@ -39,9 +42,23 @@ public class OneController {
         fetchDataService.save(user);
     }
 
+    @CrossOrigin("http://localhost:4200/users")
     @DeleteMapping("delete/{id}")
-    public void userDelete(@PathVariable Integer id)
+    public String userDelete(@PathVariable Integer id)
     {
         fetchDataService.deleteById(id);
+        return "Successfully Deleted";
+    }
+
+    //@GetMapping("delete/{username}")
+    //public UserModel hell(@PathVariable String username)
+    //{
+      //  return fetchDataService.findByEmailAddress(username);
+
+    //}
+    @PostMapping("login")
+    public UserModel  userLogin(@RequestBody UserModel user)
+    {
+        return fetchDataService.findByEmailAddress(user.getEmail(),user.getPassword());
     }
 }
