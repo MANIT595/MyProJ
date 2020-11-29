@@ -18,10 +18,11 @@ public class HomeController {
     @GetMapping("")
     public String home(Model model)
     {
-        User user = new User();
-        model.addAttribute("user",user);
+        User userr = new User();
+        model.addAttribute("user",userr);
         return "register";
     }
+
 
     @PostMapping("register")
     public String doRegister(@ModelAttribute("user") User user)
@@ -33,7 +34,6 @@ public class HomeController {
         repo.save(user);
              return "Success";
     }
-
 
 
     @GetMapping("list_users")
@@ -76,4 +76,11 @@ public class HomeController {
 
     }
 
+    @RequestMapping(path ="/logout")
+    public String logout(Model model)
+
+    {
+
+        return "register";
+    }
 }
